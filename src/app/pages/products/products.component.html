@@ -1,0 +1,9 @@
+<p>products works!</p>
+<p-sidebar [(visible)]="sidebarVisible" position="right" (onHide)="onHide()">
+  <app-detail [id]="id()" />
+</p-sidebar>
+<ul>
+  <li><a routerLink="/products/1">/products/1</a></li>
+  <li><a routerLink="/products/2">/products/2</a></li>
+  <li><a routerLink="/products/3">/products/3</a></li>
+</ul>

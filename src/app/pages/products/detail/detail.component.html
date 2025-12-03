@@ -1,0 +1,8 @@
+<p>detail works!</p>
+
+@if (post() | async; as post) {
+<h3>{{ post.id }}: {{ post.title }}</h3>
+<p>{{ post.body }}</p>
+<h4>Raw JSON</h4>
+<pre><code>{{ post | json }}</code></pre>
+}
