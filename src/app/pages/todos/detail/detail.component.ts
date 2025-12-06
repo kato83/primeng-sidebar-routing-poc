@@ -13,7 +13,7 @@ export class DetailComponent {
   #jsonplaceholderService = inject(JSONPlaceholderService);
   id = input.required<number | null>();
   post = computed(() => {
-    const id = this.id()
+    const id = this.id();
     if (!id) return;
 
     return this.#jsonplaceholderService.getPostById(id);

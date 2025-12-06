@@ -1,14 +1,14 @@
 import { Routes } from '@angular/router';
-import { ProductsComponent } from './pages/products/products.component';
+import { TodosComponent } from './pages/todos/todos.component';
 
 export const routes: Routes = [
   {
-    path: 'products',
-    component: ProductsComponent,
+    path: 'todos',
+    component: TodosComponent,
     children: [
       {
         path: ':id',
-        component: ProductsComponent,
+        component: TodosComponent,
       }
     ]
   }

@@ -5,13 +5,13 @@ import { SidebarModule } from 'primeng/sidebar';
 import { DetailComponent } from './detail/detail.component';
 
 @Component({
-  selector: 'app-products',
+  selector: 'app-todos',
   standalone: true,
   imports: [RouterLink, SidebarModule, DetailComponent],
-  templateUrl: './products.component.html',
-  styleUrl: './products.component.scss'
+  templateUrl: './todos.component.html',
+  styleUrl: './todos.component.scss'
 })
-export class ProductsComponent implements OnInit, OnDestroy {
+export class TodosComponent implements OnInit, OnDestroy {
   #router = inject(Router);
   #activatedRoute = inject(ActivatedRoute);
   #onUrlChangeSubscription: Subscription;
@@ -26,11 +26,11 @@ export class ProductsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    console.log('ProductsComponent#ngOnInit');
+    console.log('TodosComponent#ngOnInit');
   }
 
   ngOnDestroy(): void {
-    console.log('ProductsComponent#ngOnDestroy');
+    console.log('TodosComponent#ngOnDestroy');
     this.#onUrlChangeSubscription.unsubscribe();
   }
 
@@ -39,7 +39,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
    * @param event イベント
    */
   onUrlChange(event: any) {
-    console.log('ProductsComponent#onUrlChange', event);
+    console.log('TodosComponent#onUrlChange', event);
     const id = Number.parseInt(this.#activatedRoute.firstChild?.snapshot.params['id'], 10);
     if (!Number.isNaN(id) && id) {
       this.id.set(id);
@@ -52,9 +52,9 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   /**
    * サイドペイン閉じた際のハンドリング
-   * /products へ遷移するようにする
+   * /todos へ遷移するようにする
    */
   onHide() {
-    this.#router.navigate(['/products']);
+    this.#router.navigate(['/todos']);
   }
 }

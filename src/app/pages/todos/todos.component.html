@@ -1,0 +1,9 @@
+<p>todos works!</p>
+<p-sidebar [(visible)]="sidebarVisible" position="right" (onHide)="onHide()">
+  <app-detail [id]="id()" />
+</p-sidebar>
+<ul>
+  <li><a routerLink="/todos/1">/todos/1</a></li>
+  <li><a routerLink="/todos/2">/todos/2</a></li>
+  <li><a routerLink="/todos/3">/todos/3</a></li>
+</ul>
